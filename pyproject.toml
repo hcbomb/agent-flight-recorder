@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-flight-recorder"
+version = "0.1.0"
+description = "Replay-first security regression lab for AI agents and MCP workflows"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Henry"}]
+keywords = ["ai-security", "agents", "mcp", "prompt-injection", "detection-engineering"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Programming Language :: Python :: 3",
+  "Topic :: Security",
+]
+
+[project.scripts]
+afr = "agent_flight_recorder.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

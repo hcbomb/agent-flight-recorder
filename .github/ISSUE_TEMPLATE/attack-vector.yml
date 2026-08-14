@@ -1,0 +1,39 @@
+name: Attack-vector candidate
+description: Propose a safe, sourced AI-agent security regression scenario.
+title: "[scenario]: "
+labels: ["attack-vector", "research"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include working exploit payloads, credentials, or target details.
+  - type: input
+    id: source
+    attributes:
+      label: Public source
+      description: Direct URL and publication date.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Trust boundary and problem
+    validations:
+      required: true
+  - type: textarea
+    id: simulation
+    attributes:
+      label: Minimal harmless simulation
+    validations:
+      required: true
+  - type: textarea
+    id: telemetry
+    attributes:
+      label: Expected telemetry and detection
+    validations:
+      required: true
+  - type: textarea
+    id: control
+    attributes:
+      label: Candidate deterministic control
+    validations:
+      required: true

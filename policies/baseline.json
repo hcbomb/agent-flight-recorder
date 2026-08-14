@@ -1,0 +1,6 @@
+{
+  "id": "baseline",
+  "description": "Intentionally fail-open policy used to demonstrate the attack scenarios.",
+  "default_effect": "allow",
+  "rules": []
+}

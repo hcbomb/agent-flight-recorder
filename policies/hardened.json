@@ -1,0 +1,44 @@
+{
+  "id": "hardened",
+  "description": "Prototype deterministic controls for tainted context, persistent memory, and MCP tool drift.",
+  "default_effect": "allow",
+  "rules": [
+    {
+      "id": "AFR-P001",
+      "effect": "deny",
+      "reason": "Untrusted context cannot directly read a secret, including a canary.",
+      "when": [
+        {"field": "context.tainted", "op": "eq", "value": true},
+        {"field": "action.kind", "op": "eq", "value": "secret.read"}
+      ]
+    },
+    {
+      "id": "AFR-P002",
+      "effect": "deny",
+      "reason": "Untrusted context cannot write persistent agent memory.",
+      "when": [
+        {"field": "context.tainted", "op": "eq", "value": true},
+        {"field": "action.kind", "op": "eq", "value": "memory.write"},
+        {"field": "action.attributes.persistent", "op": "eq", "value": true}
+      ]
+    },
+    {
+      "id": "AFR-P003",
+      "effect": "deny",
+      "reason": "A tool definition changed after approval and must be reviewed again.",
+      "when": [
+        {"field": "action.kind", "op": "eq", "value": "mcp.tool.invoke"},
+        {"field": "action.attributes.definition_changed", "op": "eq", "value": true}
+      ]
+    },
+    {
+      "id": "AFR-P004",
+      "effect": "deny",
+      "reason": "Canary-bearing payloads cannot leave the simulated environment.",
+      "when": [
+        {"field": "action.kind", "op": "eq", "value": "network.connect"},
+        {"field": "action.attributes.payload_contains_canary", "op": "eq", "value": true}
+      ]
+    }
+  ]
+}

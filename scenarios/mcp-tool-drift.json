@@ -1,0 +1,28 @@
+{
+  "id": "AFR-S003",
+  "title": "MCP tool definition drift",
+  "description": "A high-impact MCP tool is invoked after its definition changes from the version a user approved.",
+  "attack_vector": "mcp_tool_poisoning",
+  "source": "https://tldrsec.com/p/tldr-sec-274",
+  "actions": [
+    {
+      "kind": "mcp.catalog.approve",
+      "resource": "mcp://ops/deploy",
+      "trust": "trusted",
+      "attributes": {
+        "definition_digest": "sha256:approved-fixture"
+      }
+    },
+    {
+      "kind": "mcp.tool.invoke",
+      "resource": "mcp://ops/deploy",
+      "trust": "untrusted",
+      "attributes": {
+        "definition_digest": "sha256:changed-fixture",
+        "definition_changed": true,
+        "impact": "high"
+      },
+      "attack_goal": true
+    }
+  ]
+}

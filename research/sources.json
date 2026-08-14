@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "sources": [
+    {"name": "TL;DR Sec", "url": "https://tldrsec.com/"},
+    {"name": "Unsupervised Learning archive", "url": "https://newsletter.danielmiessler.com/archive/"},
+    {"name": "Hacker News Show", "url": "https://news.ycombinator.com/show"},
+    {"name": "OWASP GenAI Security Project", "url": "https://genai.owasp.org/"},
+    {"name": "Model Context Protocol specification", "url": "https://modelcontextprotocol.io/specification/"},
+    {"name": "MITRE ATLAS", "url": "https://atlas.mitre.org/"},
+    {"name": "Trail of Bits blog", "url": "https://blog.trailofbits.com/"},
+    {"name": "PortSwigger Research", "url": "https://portswigger.net/research"},
+    {"name": "Google Project Zero", "url": "https://googleprojectzero.blogspot.com/"},
+    {"name": "Google Threat Intelligence", "url": "https://cloud.google.com/blog/topics/threat-intelligence"},
+    {"name": "Microsoft Security Blog", "url": "https://www.microsoft.com/en-us/security/blog/"},
+    {"name": "Anthropic research", "url": "https://www.anthropic.com/research"},
+    {"name": "OpenAI security", "url": "https://openai.com/security/"},
+    {"name": "GitHub Security Lab", "url": "https://github.blog/security/vulnerability-research/"}
+  ],
+  "search_themes": [
+    "indirect prompt injection and promptware",
+    "MCP tool poisoning, rug pulls, and authorization",
+    "agent skills, plugins, and supply-chain compromise",
+    "coding-agent sandbox escape and unsafe project trust",
+    "agent memory poisoning and cross-session persistence",
+    "secret exfiltration and network egress",
+    "identity delegation, confused deputy, and excessive permissions",
+    "multi-agent trust and tool-output spoofing",
+    "agent telemetry, detections, canaries, and incident response"
+  ]
+}
